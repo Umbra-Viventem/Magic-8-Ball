@@ -4,19 +4,19 @@ import random
 #name = input("What is your name: ")
 name = "Bob"
 # question = input("What is your question: ")
-question = "Are you my mommy?"
+question = "Is the sky blue?"
 ball8_q = "Magic 8-ball's answer: "
-final_q = name + " asks " + question
+if question != "":
+  final_q = name + " asks " + question
+else:
+  final_q = ""
 answer = ""
 random_number = random.randint(1, 9)
 # print(random_number)
 # Loop function
 # Attempted to write this code using cases within if loops
-if name != "":
-  
-  final_q = "Question is: "+ question
-  
-  if question != "":
+if name != "":  
+  if final_q != "":
     match random_number:
       case 1:  
         answer = "Yes - definitely"
@@ -56,8 +56,8 @@ if name != "":
         print(ball8_q + answer)
   else:
     print("Hey now, you didn't input a question.")
-
-else:
+elif name == "" and final_q != "":
+  final_q = "Question is: "+ question
   match random_number:
       case 1:  
         answer = "Yes - definitely"
@@ -95,6 +95,5 @@ else:
         answer = "Very doubtful"
         print(final_q)
         print(ball8_q + answer)
-  else:
-    print("Hey now, you didn't input anything, huh.")
-
+elif name =="" and final_q == "":
+  print("Hey now, you didn't input anything, huh.")
